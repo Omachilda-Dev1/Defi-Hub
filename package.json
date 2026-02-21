@@ -1,0 +1,33 @@
+{
+  "name": "basecamp-defi-protocol",
+  "version": "1.0.0",
+  "description": "BASECAMP DeFi Protocol - Complete DeFi platform with swapping, liquidity, farming, and governance",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "test:coverage": "hardhat coverage",
+    "test:gas": "REPORT_GAS=true hardhat test",
+    "deploy:sepolia": "hardhat run scripts/deploy-l2.js --network sepolia",
+    "deploy:mumbai": "hardhat run scripts/deploy-l2.js --network polygonMumbai",
+    "deploy:arbitrum-goerli": "hardhat run scripts/deploy-l2.js --network arbitrumGoerli",
+    "deploy:polygon": "hardhat run scripts/deploy-l2.js --network polygon",
+    "deploy:arbitrum": "hardhat run scripts/deploy-l2.js --network arbitrum",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "liquidity:sepolia": "hardhat run scripts/add-liquidity.js --network sepolia",
+    "liquidity:v2": "hardhat run scripts/add-liquidity-v2.js --network sepolia",
+    "check:pool": "hardhat run scripts/check-pool.js --network sepolia",
+    "verify": "hardhat run scripts/verify.js",
+    "node": "hardhat node",
+    "frontend": "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm run build"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.0"
+  },
+  "dependencies": {
+    "@chainlink/contracts": "^0.8.0",
+    "@openzeppelin/contracts": "^5.0.0",
+    "dotenv": "^16.3.1"
+  }
+}

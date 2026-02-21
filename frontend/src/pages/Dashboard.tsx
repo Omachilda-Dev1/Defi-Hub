@@ -38,9 +38,9 @@ export default function Dashboard() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <TokenCard
-          title="Total Value"
-          balance={portfolioData.totalValue}
-          usdValue={portfolioData.totalValueUSD}
+          title="ETH Balance"
+          balance={portfolioData.ethBalance}
+          usdValue={(Number(portfolioData.ethBalance) * 2000).toFixed(2)}
         />
         <TokenCard
           title="DGT Balance"

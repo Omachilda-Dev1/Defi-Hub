@@ -1,0 +1,12 @@
+{
+  "GovernanceToken": "0x4402Ed0148f57Cb8d2f46Bf643299bea6265272E",
+  "LiquidityPool": "0xC4FaC5b41cb42eFF175e04E17F9B313006a2a7Fc",
+  "SwapRouter": "0xA795016B5Babe707d10B00512d0B0E2E264A8D00",
+  "YieldFarm": "0x288AF74325baF03da8484376D296e3CAe0aD6630",
+  "PriceOracle": "0x30cAe669d88b7ae66B8d39d50AB07cd949207a8E",
+  "network": "sepolia",
+  "chainId": "11155111",
+  "deployer": "0x45410b0Aa0136E7066670F99332372B3379b2034",
+  "timestamp": "2026-02-21T09:18:48.095Z",
+  "blockNumber": 10305474
+}

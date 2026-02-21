@@ -1,0 +1,12 @@
+export const contracts = {
+  "GovernanceToken": "0x2f5b38d5289bA211021715CAF9FA792f381379eA",
+  "LiquidityPool": "0xcB85c9B67fB9EBd87191c83D1F321B096558C88F",
+  "SwapRouter": "0xae523b3c98071946a85f06766d169AC92bEC9c6a",
+  "YieldFarm": "0xD02A356FDE83C68eA174E9d01E2194ed9fE7BfA1",
+  "PriceOracle": "0x2f7a4ecDb14e19BC9F10df22C5A349D41611D7Cd",
+  "network": "sepolia",
+  "chainId": "11155111",
+  "deployer": "0x45410b0Aa0136E7066670F99332372B3379b2034",
+  "timestamp": "2026-02-21T10:03:13.463Z",
+  "blockNumber": 10305691
+} as const;

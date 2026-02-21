@@ -83,7 +83,7 @@ export default function Footer() {
         
         <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 text-center">
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            2024 BASECAMP DeFi Protocol. All rights reserved.
+            Copyright Omachilda 2026. All rights reserved.
           </p>
         </div>
       </div>

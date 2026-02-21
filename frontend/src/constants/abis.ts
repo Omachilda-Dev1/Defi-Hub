@@ -16,6 +16,7 @@ export const LiquidityPoolABI = [
   "function reserveETH() view returns (uint256)",
   "function reserveToken() view returns (uint256)",
   "function balanceOf(address) view returns (uint256)",
+  "function approve(address spender, uint256 amount) returns (bool)",
   "event LiquidityAdded(address indexed provider, uint256 ethAmount, uint256 tokenAmount, uint256 liquidity)",
   "event Swap(address indexed user, uint256 ethIn, uint256 tokenIn, uint256 ethOut, uint256 tokenOut)"
 ]
@@ -43,3 +44,12 @@ export const PriceOracleABI = [
   "function getLatestPrice() view returns (int256, uint256)",
   "function getPriceWithDecimals() view returns (int256 price, uint8 decimals)"
 ]
+
+// Contract Addresses (Sepolia Testnet)
+export const CONTRACT_ADDRESSES = {
+  GovernanceToken: "0x2f5b38d5289bA211021715CAF9FA792f381379eA" as `0x${string}`,
+  LiquidityPool: "0xcB85c9B67fB9EBd87191c83D1F321B096558C88F" as `0x${string}`,
+  SwapRouter: "0xae523b3c98071946a85f06766d169AC92bEC9c6a" as `0x${string}`,
+  YieldFarm: "0xD02A356FDE83C68eA174E9d01E2194ed9fE7BfA1" as `0x${string}`,
+  PriceOracle: "0x2f7a4ecDb14e19BC9F10df22C5A349D41611D7Cd" as `0x${string}`,
+} as const;
