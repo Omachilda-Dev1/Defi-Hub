@@ -14,7 +14,7 @@ export function useFarm() {
     abi: YieldFarmABI,
     functionName: 'userInfo',
     args: [BigInt(0), address || '0x0000000000000000000000000000000000000000'],
-  })
+  }) as { data: [bigint, bigint, bigint] | undefined }
 
   // Read pending rewards
   const { data: pendingRewards } = useReadContract({
@@ -22,7 +22,7 @@ export function useFarm() {
     abi: YieldFarmABI,
     functionName: 'pendingReward',
     args: [BigInt(0), address || '0x0000000000000000000000000000000000000000'],
-  })
+  }) as { data: bigint | undefined }
 
   // Read LP token balance
   const { data: lpBalance } = useReadContract({
@@ -30,17 +30,17 @@ export function useFarm() {
     abi: LiquidityPoolABI,
     functionName: 'balanceOf',
     args: [address || '0x0000000000000000000000000000000000000000'],
-  })
+  }) as { data: bigint | undefined }
   
   const farmData = {
-    totalStaked: userInfo ? formatEther(userInfo[0] as bigint) : '0.00',
+    totalStaked: userInfo ? formatEther(userInfo[0]) : '0.00',
     apy: '125.5',
     rewardPerBlock: '10.00',
-    lpBalance: lpBalance ? formatEther(lpBalance as bigint) : '0.00',
-    stakedAmount: userInfo ? formatEther(userInfo[0] as bigint) : '0.00',
+    lpBalance: lpBalance ? formatEther(lpBalance) : '0.00',
+    stakedAmount: userInfo ? formatEther(userInfo[0]) : '0.00',
     lockEndTime: 'Not locked',
-    pendingRewards: pendingRewards ? formatEther(pendingRewards as bigint) : '0.00',
-    pendingRewardsUSD: pendingRewards ? (Number(formatEther(pendingRewards as bigint)) * 5).toFixed(2) : '0.00'
+    pendingRewards: pendingRewards ? formatEther(pendingRewards) : '0.00',
+    pendingRewardsUSD: pendingRewards ? (Number(formatEther(pendingRewards)) * 5).toFixed(2) : '0.00'
   }
 
   const stake = async (amount: string) => {

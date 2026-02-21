@@ -2,6 +2,12 @@
 
 A complete decentralized finance platform featuring token swapping, liquidity provision, yield farming, and governance. Built with Solidity, React, and deployed on Ethereum Sepolia testnet.
 
+## Live Demo
+
+🚀 **Live Application**: [https://basecamp-defi.vercel.app](https://basecamp-defi.vercel.app)
+
+📝 **GitHub Repository**: [https://github.com/Omachilda-Dev1/Defi-Hub](https://github.com/Omachilda-Dev1/Defi-Hub)
+
 ## Screenshots
 
 ### Dashboard

@@ -117,15 +117,15 @@ export default function Swap() {
             <div className="bg-white dark:bg-black rounded-lg p-4 text-sm border border-gray-300 dark:border-gray-700 transition-colors">
               <div className="flex justify-between text-gray-600 dark:text-gray-400 mb-2">
                 <span>Rate</span>
-                <span className="text-black dark:text-white">{quote.rate}</span>
+                <span className="text-black dark:text-white">1 ETH = 10,000 DGT</span>
               </div>
               <div className="flex justify-between text-gray-600 dark:text-gray-400 mb-2">
                 <span>Price Impact</span>
-                <span className="text-black dark:text-white">{quote.priceImpact}%</span>
+                <span className="text-black dark:text-white">{'<0.01'}%</span>
               </div>
               <div className="flex justify-between text-gray-600 dark:text-gray-400">
                 <span>Fee</span>
-                <span className="text-black dark:text-white">{quote.fee}</span>
+                <span className="text-black dark:text-white">0.3%</span>
               </div>
             </div>
           )}

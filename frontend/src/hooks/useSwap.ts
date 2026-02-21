@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useWriteContract, useReadContract } from 'wagmi'
-import { parseEther, formatEther } from 'viem'
+import { useWriteContract } from 'wagmi'
+import { parseEther } from 'viem'
 import { CONTRACT_ADDRESSES, SwapRouterABI, GovernanceTokenABI } from '../constants/abis'
 
 interface SwapParams {
@@ -12,14 +12,13 @@ interface SwapParams {
 
 export function useSwap() {
   const [loading, setLoading] = useState(false)
-  const [quote, setQuote] = useState<string | null>(null)
+  const [quote] = useState<string | null>(null)
   
   const { writeContractAsync } = useWriteContract()
 
-  const getQuote = async (amount: string, isETHToToken: boolean) => {
+  const getQuote = async (amount: string) => {
     try {
       const amountWei = parseEther(amount)
-      // You can add quote fetching logic here
       return amountWei.toString()
     } catch (error) {
       console.error('Error getting quote:', error)
