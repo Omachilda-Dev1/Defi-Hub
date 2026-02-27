@@ -49,17 +49,17 @@ export default function Home() {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-5xl md:text-7xl font-bold text-black dark:text-white mb-6 leading-tight">
-              Welcome to
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black dark:text-white mb-6 leading-tight px-4">
+              <span className="block">Welcome to</span>
               <span className="block text-primary mt-2">BASECAMP DeFi</span>
             </h1>
 
             {/* Subheading */}
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-4 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-4 max-w-3xl mx-auto px-4">
               Your Complete Decentralized Finance Platform
             </p>
 
-            <p className="text-lg text-gray-500 dark:text-gray-500 mb-12 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-500 dark:text-gray-500 mb-12 max-w-2xl mx-auto px-4">
               Swap tokens, provide liquidity, earn rewards, and participate in governance - all in one place
             </p>
 
@@ -88,24 +88,24 @@ export default function Home() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-              <div className="bg-primary/10 dark:bg-primary/5 rounded-lg p-6 border border-primary/20 transition-colors">
-                <div className="text-3xl font-bold text-primary mb-2">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto px-4">
+              <div className="bg-primary/10 dark:bg-primary/5 rounded-lg p-4 sm:p-6 border border-primary/20 transition-colors">
+                <div className="text-2xl sm:text-3xl font-bold text-primary mb-2 break-words">
                   {isLoading ? '...' : `$${ethPrice}`}
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">ETH Price (Live)</div>
+                <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">ETH Price (Live)</div>
               </div>
-              <div className="bg-primary/10 dark:bg-primary/5 rounded-lg p-6 border border-primary/20 transition-colors">
-                <div className="text-3xl font-bold text-primary mb-2">5</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Smart Contracts</div>
+              <div className="bg-primary/10 dark:bg-primary/5 rounded-lg p-4 sm:p-6 border border-primary/20 transition-colors">
+                <div className="text-2xl sm:text-3xl font-bold text-primary mb-2">5</div>
+                <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Smart Contracts</div>
               </div>
-              <div className="bg-primary/10 dark:bg-primary/5 rounded-lg p-6 border border-primary/20 transition-colors">
-                <div className="text-3xl font-bold text-primary mb-2">0.3%</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Trading Fee</div>
+              <div className="bg-primary/10 dark:bg-primary/5 rounded-lg p-4 sm:p-6 border border-primary/20 transition-colors">
+                <div className="text-2xl sm:text-3xl font-bold text-primary mb-2">0.3%</div>
+                <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Trading Fee</div>
               </div>
-              <div className="bg-primary/10 dark:bg-primary/5 rounded-lg p-6 border border-primary/20 transition-colors">
-                <div className="text-3xl font-bold text-primary mb-2">10</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">DGT per Block</div>
+              <div className="bg-primary/10 dark:bg-primary/5 rounded-lg p-4 sm:p-6 border border-primary/20 transition-colors">
+                <div className="text-2xl sm:text-3xl font-bold text-primary mb-2">10</div>
+                <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">DGT per Block</div>
               </div>
             </div>
           </div>
@@ -190,22 +190,22 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-2xl font-bold text-primary mb-2">Solidity</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Smart Contracts</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
+            <div className="p-4">
+              <div className="text-xl sm:text-2xl font-bold text-primary mb-2 break-words">Solidity</div>
+              <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Smart Contracts</div>
             </div>
-            <div>
-              <div className="text-2xl font-bold text-primary mb-2">React</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Frontend</div>
+            <div className="p-4">
+              <div className="text-xl sm:text-2xl font-bold text-primary mb-2">React</div>
+              <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Frontend</div>
             </div>
-            <div>
-              <div className="text-2xl font-bold text-primary mb-2">TypeScript</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Type Safety</div>
+            <div className="p-4">
+              <div className="text-xl sm:text-2xl font-bold text-primary mb-2 break-words">TypeScript</div>
+              <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Type Safety</div>
             </div>
-            <div>
-              <div className="text-2xl font-bold text-primary mb-2">Chainlink</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Price Feeds</div>
+            <div className="p-4">
+              <div className="text-xl sm:text-2xl font-bold text-primary mb-2 break-words">Chainlink</div>
+              <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Price Feeds</div>
             </div>
           </div>
         </div>

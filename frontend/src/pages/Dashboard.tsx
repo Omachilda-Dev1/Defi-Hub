@@ -33,7 +33,7 @@ export default function Dashboard() {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
       <div className="space-y-6 sm:space-y-8">
         <div>
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black dark:text-white mb-2">Portfolio Dashboard</h1>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black dark:text-white mb-2 break-words">Portfolio Dashboard</h1>
           <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">Track your DeFi assets and earnings</p>
         </div>
 
@@ -67,11 +67,11 @@ export default function Dashboard() {
             <div className="space-y-4">
               {portfolioData.recentActivity.map((activity, index) => (
                 <div key={index} className="flex items-center justify-between py-3 border-b border-gray-200 dark:border-gray-800 last:border-0">
-                  <div>
-                    <p className="text-sm sm:text-base text-black dark:text-white font-medium">{activity.type}</p>
+                  <div className="min-w-0 flex-1 pr-4">
+                    <p className="text-sm sm:text-base text-black dark:text-white font-medium truncate">{activity.type}</p>
                     <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{activity.time}</p>
                   </div>
-                  <p className="text-sm sm:text-base text-primary font-semibold">{activity.amount}</p>
+                  <p className="text-sm sm:text-base text-primary font-semibold whitespace-nowrap">{activity.amount}</p>
                 </div>
               ))}
             </div>
