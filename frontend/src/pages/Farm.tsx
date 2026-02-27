@@ -61,11 +61,11 @@ export default function Farm() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-          <div className="bg-primary/10 dark:bg-primary/5 rounded-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-800 transition-colors">
+          <div className="bg-primary/10 dark:bg-primary/5 rounded-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-800 transition-colors overflow-hidden">
             <h2 className="text-lg sm:text-xl font-bold text-black dark:text-white mb-4 sm:mb-6">Stake LP Tokens</h2>
             
             <div className="space-y-4">
-              <div className="bg-white dark:bg-black rounded-lg p-4 border border-gray-300 dark:border-gray-700 transition-colors">
+              <div className="bg-white dark:bg-black rounded-lg p-4 border border-gray-300 dark:border-gray-700 transition-colors overflow-hidden">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm text-gray-600 dark:text-gray-400">Amount to Stake</span>
                   <span className="text-sm text-gray-600 dark:text-gray-400 truncate ml-2">Balance: {farmData.lpBalance}</span>
@@ -76,8 +76,16 @@ export default function Farm() {
                     value={stakeAmount}
                     onChange={(e) => setStakeAmount(e.target.value)}
                     placeholder="0.0"
-                    className="flex-1 bg-transparent text-2xl text-black dark:text-white outline-none min-w-0"
+                    className="flex-1 bg-transparent text-xl sm:text-2xl text-black dark:text-white outline-none min-w-0"
                   />
+                  <button
+                    onClick={() => setStakeAmount(farmData.lpBalance)}
+                    className="text-primary hover:text-primary-dark text-sm font-semibold transition-colors whitespace-nowrap shrink-0 px-2"
+                  >
+                    MAX
+                  </button>
+                </div>
+              </div>
                   <button
                     onClick={() => setStakeAmount(farmData.lpBalance)}
                     className="text-primary hover:text-primary-dark text-sm font-semibold transition-colors"
@@ -130,11 +138,11 @@ export default function Farm() {
               </button>
             </div>
 
-            <div className="bg-primary/10 dark:bg-primary/5 rounded-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-800 transition-colors">
+            <div className="bg-primary/10 dark:bg-primary/5 rounded-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-800 transition-colors overflow-hidden">
               <h2 className="text-lg sm:text-xl font-bold text-black dark:text-white mb-4 sm:mb-6">Unstake</h2>
               
               <div className="space-y-4">
-                <div className="bg-white dark:bg-black rounded-lg p-3 sm:p-4 border border-gray-300 dark:border-gray-700 transition-colors">
+                <div className="bg-white dark:bg-black rounded-lg p-3 sm:p-4 border border-gray-300 dark:border-gray-700 transition-colors overflow-hidden">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Amount to Unstake</span>
                     <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 truncate ml-2">Staked: {farmData.stakedAmount}</span>
@@ -149,7 +157,7 @@ export default function Farm() {
                     />
                     <button
                       onClick={() => setUnstakeAmount(farmData.stakedAmount)}
-                      className="text-primary hover:text-primary-dark text-sm font-semibold transition-colors whitespace-nowrap px-2"
+                      className="text-primary hover:text-primary-dark text-sm font-semibold transition-colors whitespace-nowrap shrink-0 px-2"
                     >
                       MAX
                     </button>

@@ -46,7 +46,7 @@ export default function Swap() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
       <div className="max-w-lg mx-auto">
-        <div className="bg-primary/10 dark:bg-primary/5 rounded-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-800 transition-colors">
+        <div className="bg-primary/10 dark:bg-primary/5 rounded-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-800 transition-colors overflow-hidden">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4">
             <h2 className="text-xl sm:text-2xl font-bold text-black dark:text-white">Swap Tokens</h2>
             <div className="flex items-center space-x-2">
@@ -62,7 +62,7 @@ export default function Swap() {
           </div>
 
           <div className="space-y-4">
-            <div className="bg-white dark:bg-black rounded-lg p-3 sm:p-4 border border-gray-300 dark:border-gray-700 transition-colors">
+            <div className="bg-white dark:bg-black rounded-lg p-3 sm:p-4 border border-gray-300 dark:border-gray-700 transition-colors overflow-hidden">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">From</span>
                 <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 truncate ml-2">Balance: {getBalance(fromToken)}</span>
@@ -73,12 +73,12 @@ export default function Swap() {
                   value={fromAmount}
                   onChange={(e) => setFromAmount(e.target.value)}
                   placeholder="0.0"
-                  className="flex-1 bg-transparent text-xl sm:text-2xl text-black dark:text-white outline-none min-w-0"
+                  className="flex-1 bg-transparent text-lg sm:text-2xl text-black dark:text-white outline-none min-w-0"
                 />
                 <select
                   value={fromToken}
                   onChange={(e) => setFromToken(e.target.value)}
-                  className="bg-gray-100 dark:bg-gray-800 text-black dark:text-white px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-semibold border border-gray-300 dark:border-gray-700 transition-colors w-full sm:w-auto"
+                  className="bg-gray-100 dark:bg-gray-800 text-black dark:text-white px-3 py-2 rounded-lg text-sm font-semibold border border-gray-300 dark:border-gray-700 transition-colors shrink-0"
                 >
                   <option value="ETH">ETH</option>
                   <option value="DGT">DGT</option>
@@ -97,7 +97,7 @@ export default function Swap() {
               </button>
             </div>
 
-            <div className="bg-white dark:bg-black rounded-lg p-3 sm:p-4 border border-gray-300 dark:border-gray-700 transition-colors">
+            <div className="bg-white dark:bg-black rounded-lg p-3 sm:p-4 border border-gray-300 dark:border-gray-700 transition-colors overflow-hidden">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">To</span>
                 <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 truncate ml-2">Balance: {getBalance(toToken)}</span>
@@ -108,12 +108,12 @@ export default function Swap() {
                   value={toAmount}
                   readOnly
                   placeholder="0.0"
-                  className="flex-1 bg-transparent text-xl sm:text-2xl text-black dark:text-white outline-none min-w-0"
+                  className="flex-1 bg-transparent text-lg sm:text-2xl text-black dark:text-white outline-none min-w-0"
                 />
                 <select
                   value={toToken}
                   onChange={(e) => setToToken(e.target.value)}
-                  className="bg-gray-100 dark:bg-gray-800 text-black dark:text-white px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-semibold border border-gray-300 dark:border-gray-700 transition-colors w-full sm:w-auto"
+                  className="bg-gray-100 dark:bg-gray-800 text-black dark:text-white px-3 py-2 rounded-lg text-sm font-semibold border border-gray-300 dark:border-gray-700 transition-colors shrink-0"
                 >
                   <option value="DGT">DGT</option>
                   <option value="ETH">ETH</option>

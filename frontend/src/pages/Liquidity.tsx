@@ -153,7 +153,7 @@ export default function Liquidity() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
       <div className="max-w-lg mx-auto">
-        <div className="bg-primary/10 dark:bg-primary/5 rounded-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-800 transition-colors">
+        <div className="bg-primary/10 dark:bg-primary/5 rounded-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-800 transition-colors overflow-hidden">
           <h2 className="text-xl sm:text-2xl font-bold text-black dark:text-white mb-4 sm:mb-6">Liquidity Pool</h2>
 
           <div className="flex space-x-2 mb-4 sm:mb-6">
@@ -181,31 +181,31 @@ export default function Liquidity() {
 
         {tab === 'add' ? (
             <div className="space-y-4">
-              <div className="bg-white dark:bg-black rounded-lg p-3 sm:p-4 border border-gray-300 dark:border-gray-700 transition-colors">
+              <div className="bg-white dark:bg-black rounded-lg p-3 sm:p-4 border border-gray-300 dark:border-gray-700 transition-colors overflow-hidden">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">ETH Amount</span>
                   <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 truncate ml-2">Balance: {balancesLoading ? 'Loading...' : Number(ethBalance).toFixed(4)}</span>
                 </div>
-                <div className="flex items-center gap-2 sm:gap-4">
+                <div className="flex items-center gap-2">
                   <input
                     type="text"
                     value={ethAmount}
                     onChange={(e) => setEthAmount(e.target.value)}
                     placeholder="0.0"
-                    className="flex-1 bg-transparent text-xl sm:text-2xl text-black dark:text-white outline-none min-w-0"
+                    className="flex-1 bg-transparent text-lg sm:text-2xl text-black dark:text-white outline-none min-w-0"
                   />
-                  <span className="text-black dark:text-white font-semibold text-sm sm:text-base whitespace-nowrap">ETH</span>
+                  <span className="text-black dark:text-white font-semibold text-sm whitespace-nowrap shrink-0">ETH</span>
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-black rounded-lg p-3 sm:p-4 border border-gray-300 dark:border-gray-700 transition-colors">
+              <div className="bg-white dark:bg-black rounded-lg p-3 sm:p-4 border border-gray-300 dark:border-gray-700 transition-colors overflow-hidden">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 truncate">
                     {reserveETH && Number(formatEther(reserveETH as bigint)) > 0 ? 'DGT (Auto)' : 'DGT (Set ratio)'}
                   </span>
                   <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 truncate ml-2">Balance: {balancesLoading ? 'Loading...' : Number(dgtBalance).toFixed(2)}</span>
                 </div>
-                <div className="flex items-center gap-2 sm:gap-4">
+                <div className="flex items-center gap-2">
                   <input
                     type="text"
                     value={tokenAmount}
@@ -216,9 +216,9 @@ export default function Liquidity() {
                       }
                     }}
                     placeholder="0.0"
-                    className="flex-1 bg-transparent text-xl sm:text-2xl text-black dark:text-white outline-none min-w-0"
+                    className="flex-1 bg-transparent text-lg sm:text-2xl text-black dark:text-white outline-none min-w-0"
                   />
-                  <span className="text-black dark:text-white font-semibold text-sm sm:text-base whitespace-nowrap">DGT</span>
+                  <span className="text-black dark:text-white font-semibold text-sm whitespace-nowrap shrink-0">DGT</span>
                 </div>
                 <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">
                   {reserveETH && Number(formatEther(reserveETH as bigint)) > 0 
