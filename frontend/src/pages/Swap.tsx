@@ -65,20 +65,20 @@ export default function Swap() {
             <div className="bg-white dark:bg-black rounded-lg p-3 sm:p-4 border border-gray-300 dark:border-gray-700 transition-colors">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">From</span>
-                <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Balance: {getBalance(fromToken)}</span>
+                <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 truncate ml-2">Balance: {getBalance(fromToken)}</span>
               </div>
-              <div className="flex items-center space-x-2 sm:space-x-4">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-4">
                 <input
                   type="text"
                   value={fromAmount}
                   onChange={(e) => setFromAmount(e.target.value)}
                   placeholder="0.0"
-                  className="flex-1 bg-transparent text-xl sm:text-2xl text-black dark:text-white outline-none"
+                  className="flex-1 bg-transparent text-xl sm:text-2xl text-black dark:text-white outline-none min-w-0"
                 />
                 <select
                   value={fromToken}
                   onChange={(e) => setFromToken(e.target.value)}
-                  className="bg-gray-100 dark:bg-gray-800 text-black dark:text-white px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-semibold border border-gray-300 dark:border-gray-700 transition-colors"
+                  className="bg-gray-100 dark:bg-gray-800 text-black dark:text-white px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-semibold border border-gray-300 dark:border-gray-700 transition-colors w-full sm:w-auto"
                 >
                   <option value="ETH">ETH</option>
                   <option value="DGT">DGT</option>
@@ -100,20 +100,20 @@ export default function Swap() {
             <div className="bg-white dark:bg-black rounded-lg p-3 sm:p-4 border border-gray-300 dark:border-gray-700 transition-colors">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">To</span>
-                <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Balance: {getBalance(toToken)}</span>
+                <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 truncate ml-2">Balance: {getBalance(toToken)}</span>
               </div>
-              <div className="flex items-center space-x-2 sm:space-x-4">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-4">
                 <input
                   type="text"
                   value={toAmount}
                   readOnly
                   placeholder="0.0"
-                  className="flex-1 bg-transparent text-xl sm:text-2xl text-black dark:text-white outline-none"
+                  className="flex-1 bg-transparent text-xl sm:text-2xl text-black dark:text-white outline-none min-w-0"
                 />
                 <select
                   value={toToken}
                   onChange={(e) => setToToken(e.target.value)}
-                  className="bg-gray-100 dark:bg-gray-800 text-black dark:text-white px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-semibold border border-gray-300 dark:border-gray-700 transition-colors"
+                  className="bg-gray-100 dark:bg-gray-800 text-black dark:text-white px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-semibold border border-gray-300 dark:border-gray-700 transition-colors w-full sm:w-auto"
                 >
                   <option value="DGT">DGT</option>
                   <option value="ETH">ETH</option>

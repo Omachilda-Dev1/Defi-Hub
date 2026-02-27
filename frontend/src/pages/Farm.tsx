@@ -68,15 +68,15 @@ export default function Farm() {
               <div className="bg-white dark:bg-black rounded-lg p-4 border border-gray-300 dark:border-gray-700 transition-colors">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm text-gray-600 dark:text-gray-400">Amount to Stake</span>
-                  <span className="text-sm text-gray-600 dark:text-gray-400">Balance: {farmData.lpBalance}</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-400 truncate ml-2">Balance: {farmData.lpBalance}</span>
                 </div>
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center gap-2">
                   <input
                     type="text"
                     value={stakeAmount}
                     onChange={(e) => setStakeAmount(e.target.value)}
                     placeholder="0.0"
-                    className="flex-1 bg-transparent text-2xl text-black dark:text-white outline-none"
+                    className="flex-1 bg-transparent text-2xl text-black dark:text-white outline-none min-w-0"
                   />
                   <button
                     onClick={() => setStakeAmount(farmData.lpBalance)}
@@ -137,17 +137,24 @@ export default function Farm() {
                 <div className="bg-white dark:bg-black rounded-lg p-3 sm:p-4 border border-gray-300 dark:border-gray-700 transition-colors">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Amount to Unstake</span>
-                    <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Staked: {farmData.stakedAmount}</span>
+                    <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 truncate ml-2">Staked: {farmData.stakedAmount}</span>
                   </div>
-                  <div className="flex items-center space-x-2 sm:space-x-4">
+                  <div className="flex items-center gap-2">
                     <input
                       type="text"
                       value={unstakeAmount}
                       onChange={(e) => setUnstakeAmount(e.target.value)}
                       placeholder="0.0"
-                      className="flex-1 bg-transparent text-xl sm:text-2xl text-black dark:text-white outline-none"
+                      className="flex-1 bg-transparent text-xl sm:text-2xl text-black dark:text-white outline-none min-w-0"
                     />
                     <button
+                      onClick={() => setUnstakeAmount(farmData.stakedAmount)}
+                      className="text-primary hover:text-primary-dark text-sm font-semibold transition-colors whitespace-nowrap px-2"
+                    >
+                      MAX
+                    </button>
+                  </div>
+                </div>
                       onClick={() => setUnstakeAmount(farmData.stakedAmount)}
                       className="text-primary hover:text-primary-dark text-xs sm:text-sm font-semibold transition-colors"
                     >

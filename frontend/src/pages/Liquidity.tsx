@@ -184,28 +184,28 @@ export default function Liquidity() {
               <div className="bg-white dark:bg-black rounded-lg p-3 sm:p-4 border border-gray-300 dark:border-gray-700 transition-colors">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">ETH Amount</span>
-                  <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Balance: {balancesLoading ? 'Loading...' : Number(ethBalance).toFixed(4)}</span>
+                  <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 truncate ml-2">Balance: {balancesLoading ? 'Loading...' : Number(ethBalance).toFixed(4)}</span>
                 </div>
-                <div className="flex items-center space-x-2 sm:space-x-4">
+                <div className="flex items-center gap-2 sm:gap-4">
                   <input
                     type="text"
                     value={ethAmount}
                     onChange={(e) => setEthAmount(e.target.value)}
                     placeholder="0.0"
-                    className="flex-1 bg-transparent text-xl sm:text-2xl text-black dark:text-white outline-none"
+                    className="flex-1 bg-transparent text-xl sm:text-2xl text-black dark:text-white outline-none min-w-0"
                   />
-                  <span className="text-black dark:text-white font-semibold text-sm sm:text-base">ETH</span>
+                  <span className="text-black dark:text-white font-semibold text-sm sm:text-base whitespace-nowrap">ETH</span>
                 </div>
               </div>
 
               <div className="bg-white dark:bg-black rounded-lg p-3 sm:p-4 border border-gray-300 dark:border-gray-700 transition-colors">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-                    {reserveETH && Number(formatEther(reserveETH as bigint)) > 0 ? 'DGT Amount (Auto-calculated)' : 'DGT Amount (You set the ratio)'}
+                  <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 truncate">
+                    {reserveETH && Number(formatEther(reserveETH as bigint)) > 0 ? 'DGT (Auto)' : 'DGT (Set ratio)'}
                   </span>
-                  <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Balance: {balancesLoading ? 'Loading...' : Number(dgtBalance).toFixed(2)}</span>
+                  <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 truncate ml-2">Balance: {balancesLoading ? 'Loading...' : Number(dgtBalance).toFixed(2)}</span>
                 </div>
-                <div className="flex items-center space-x-2 sm:space-x-4">
+                <div className="flex items-center gap-2 sm:gap-4">
                   <input
                     type="text"
                     value={tokenAmount}
@@ -216,14 +216,14 @@ export default function Liquidity() {
                       }
                     }}
                     placeholder="0.0"
-                    className="flex-1 bg-transparent text-xl sm:text-2xl text-black dark:text-white outline-none"
+                    className="flex-1 bg-transparent text-xl sm:text-2xl text-black dark:text-white outline-none min-w-0"
                   />
-                  <span className="text-black dark:text-white font-semibold text-sm sm:text-base">DGT</span>
+                  <span className="text-black dark:text-white font-semibold text-sm sm:text-base whitespace-nowrap">DGT</span>
                 </div>
                 <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">
                   {reserveETH && Number(formatEther(reserveETH as bigint)) > 0 
-                    ? 'Amount calculated based on pool ratio' 
-                    : 'Pool is empty - you set the initial price'}
+                    ? 'Calculated by pool ratio' 
+                    : 'Pool empty - set initial price'}
                 </p>
               </div>
 
@@ -238,7 +238,7 @@ export default function Liquidity() {
               </div>
               <div className="flex justify-between text-gray-600 dark:text-gray-400">
                 <span>Rate</span>
-                <span className="text-black dark:text-white">1 ETH = 1000 DGT</span>
+                <span className="text-black dark:text-white break-all">1 ETH = 1000 DGT</span>
               </div>
             </div>
 
