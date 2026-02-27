@@ -1,0 +1,8 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mountain/Triangle representing "BASE" -->
+  <path d="M20 5L35 30H5L20 5Z" fill="#FDB813"/>
+  <!-- Camp/Tent shape inside -->
+  <path d="M20 12L28 25H12L20 12Z" fill="#000000"/>
+  <!-- Small triangle detail -->
+  <path d="M20 15L24 22H16L20 15Z" fill="#FDB813"/>
+</svg>

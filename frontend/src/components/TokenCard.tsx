@@ -6,7 +6,7 @@ interface TokenCardProps {
 
 export default function TokenCard({ title, balance, usdValue }: TokenCardProps) {
   return (
-    <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-6 border border-gray-200 dark:border-gray-800 transition-colors">
+    <div className="bg-primary/10 dark:bg-primary/5 rounded-lg p-6 border border-primary/20 transition-colors">
       <div className="mb-4">
         <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300">{title}</h3>
       </div>

@@ -15,7 +15,7 @@ contract LiquidityPool is ERC20, ReentrancyGuard {
     uint256 public reserveETH;
     uint256 public reserveToken;
     
-    uint256 public constant MINIMUM_LIQUIDITY = 1000;
+    uint256 public constant MINIMUM_LIQUIDITY = 100;
     uint256 public constant FEE_PERCENT = 3; // 0.3% fee
     uint256 public constant FEE_DENOMINATOR = 1000;
     
