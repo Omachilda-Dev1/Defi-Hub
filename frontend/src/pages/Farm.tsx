@@ -163,13 +163,6 @@ export default function Farm() {
                     </button>
                   </div>
                 </div>
-                      onClick={() => setUnstakeAmount(farmData.stakedAmount)}
-                      className="text-primary hover:text-primary-dark text-xs sm:text-sm font-semibold transition-colors"
-                    >
-                      MAX
-                    </button>
-                  </div>
-                </div>
 
                 <button
                   onClick={handleUnstake}
