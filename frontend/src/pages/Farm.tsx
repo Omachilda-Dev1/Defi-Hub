@@ -86,14 +86,6 @@ export default function Farm() {
                   </button>
                 </div>
               </div>
-                  <button
-                    onClick={() => setStakeAmount(farmData.lpBalance)}
-                    className="text-primary hover:text-primary-dark text-sm font-semibold transition-colors"
-                  >
-                    MAX
-                  </button>
-                </div>
-              </div>
 
               <button
                 onClick={handleStake}
