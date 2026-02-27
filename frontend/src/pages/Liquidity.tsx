@@ -5,7 +5,7 @@ import { useBalances } from '../hooks/useBalances'
 import { CONTRACT_ADDRESSES, LiquidityPoolABI, GovernanceTokenABI } from '../constants/abis'
 
 export default function Liquidity() {
-  const { isConnected, address } = useAccount()
+  const { isConnected } = useAccount()
   const { ethBalance, dgtBalance, lpBalance, isLoading: balancesLoading } = useBalances()
   const [tab, setTab] = useState<'add' | 'remove'>('add')
   const [ethAmount, setEthAmount] = useState('')
@@ -55,16 +55,14 @@ export default function Liquidity() {
     setStatus('Please confirm in MetaMask...')
     
     try {
-      const result = await writeContract({
+      writeContract({
         address: CONTRACT_ADDRESSES.GovernanceToken,
         abi: GovernanceTokenABI,
         functionName: 'approve',
         args: [CONTRACT_ADDRESSES.LiquidityPool, parseEther(tokenAmount)],
       })
       
-      if (result) {
-        setStatus('Approval submitted. Waiting for confirmation...')
-      }
+      setStatus('Approval submitted. Waiting for confirmation...')
     } catch (error: any) {
       console.error('Approval error:', error)
       if (error.message?.includes('User rejected') || error.message?.includes('User denied')) {
@@ -85,7 +83,7 @@ export default function Liquidity() {
     
     try {
       // Use writeContract with manual gas override
-      const result = await writeContract({
+      writeContract({
         address: CONTRACT_ADDRESSES.LiquidityPool,
         abi: LiquidityPoolABI,
         functionName: 'addLiquidity',
@@ -96,9 +94,7 @@ export default function Liquidity() {
         gas: 500000n,
       } as any)
       
-      if (result) {
-        setStatus('Transaction submitted. Waiting for confirmation...')
-      }
+      setStatus('Transaction submitted. Waiting for confirmation...')
     } catch (error: any) {
       console.error('Add liquidity error:', error)
       if (error.message?.includes('User rejected') || error.message?.includes('User denied')) {
@@ -120,16 +116,14 @@ export default function Liquidity() {
     setStatus('Please confirm in MetaMask...')
     
     try {
-      const result = await writeContract({
+      writeContract({
         address: CONTRACT_ADDRESSES.LiquidityPool,
         abi: LiquidityPoolABI,
         functionName: 'removeLiquidity',
         args: [parseEther(lpAmount)],
       })
       
-      if (result) {
-        setStatus('Transaction submitted. Waiting for confirmation...')
-      }
+      setStatus('Transaction submitted. Waiting for confirmation...')
     } catch (error: any) {
       console.error('Remove liquidity error:', error)
       if (error.message?.includes('User rejected') || error.message?.includes('User denied')) {

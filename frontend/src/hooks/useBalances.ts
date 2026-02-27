@@ -1,24 +1,20 @@
 import { useAccount, useBalance } from 'wagmi'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { formatEther } from 'viem'
 
 export function useBalances() {
   const { address, isConnected } = useAccount()
-  const [ethBalance, setEthBalance] = useState('0.2548')
-  const [dgtBalance, setDgtBalance] = useState('900000')
-  const [lpBalance, setLpBalance] = useState('0')
+  const dgtBalance = '900000'
+  const lpBalance = '0'
+  const ethBalanceStatic = '0.2548'
 
   // Try to get real ETH balance
   const { data: realEthBalance } = useBalance({
     address: address,
   })
 
-  // Update ETH balance when real data arrives
-  useEffect(() => {
-    if (realEthBalance) {
-      setEthBalance(formatEther(realEthBalance.value))
-    }
-  }, [realEthBalance])
+  // Use real ETH balance if available, otherwise use static
+  const ethBalance = realEthBalance ? formatEther(realEthBalance.value) : ethBalanceStatic
 
   // For demo purposes, use static values
   useEffect(() => {

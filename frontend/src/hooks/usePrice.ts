@@ -8,8 +8,10 @@ export function usePrice() {
     functionName: 'getLatestPrice',
   })
 
-  // priceData returns [price, timestamp]
-  const ethPrice = priceData ? Number(priceData[0]) / 1e8 : 0 // Chainlink uses 8 decimals
+  // priceData returns [price, timestamp] as a tuple
+  const ethPrice = priceData && Array.isArray(priceData) && priceData[0] 
+    ? Number(priceData[0]) / 1e8 
+    : 0 // Chainlink uses 8 decimals
 
   return {
     ethPrice: ethPrice > 0 ? ethPrice.toFixed(2) : '0.00',
